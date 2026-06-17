@@ -1,220 +1,251 @@
-# 🎬 CineVerse
+# CineVerse
 
-A beautiful and modern movie search application built with Next.js, TypeScript, and the OMDB API. This app allows users to search for movies, view detailed information, and rate their favorites.
+A premium, cinematic movie discovery platform built with **Next.js 15**, **React 19**, **TypeScript**, and **Redux Toolkit**. Search millions of movies and TV shows, explore actor filmographies, manage your watchlist, compare films side-by-side, and chat with an AI-powered recommendation bot.
 
-## ✨ Features
-
-### Core Functionality
-
-- **Movie Search**: Search for movies by title with auto-complete and debounced API calls
-- **Actor Search**: Search for actors by name and discover their filmography
-- **Movie Details**: View detailed information including plot, cast, ratings, and more
-- **Actor Details**: View actor information including biography, filmography, and genres
-- **User Ratings**: Rate movies with a 5-star rating system (stored locally)
-- **Dark Mode**: Toggle between light and dark themes with persistence
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-
-### Pages
-
-- **`/movies`** - Movie list page with search functionality
-- **`/movies/[id]`** - Individual movie details page
-- **`/actors`** - Actor search and discovery page
-- **`/actors/[name]`** - Individual actor details page
-
-### UI/UX Features
-
-- Modern and clean design inspired by popular movie platforms
-- Smooth animations and transitions using Framer Motion
-- Loading states and error handling
-- Skeleton loading for better UX
-- Beautiful gradient backgrounds and cards
-
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 15.3 with App Router
-- **Language**: TypeScript
-- **State Management**: Redux Toolkit
-- **Styling**: Tailwind CSS
-- **Components**: Custom UI components with shadcn/ui patterns
-- **Icons**: Lucide React
-- **Animations**: Framer Motion
-- **API**: OMDB API for movie data
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd movie-search
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 📱 Usage
-
-### Searching for Movies
-
-1. Navigate to the Movies page
-2. Use the search bar to enter a movie title
-3. Results will appear automatically as you type (debounced)
-4. Click on any movie card to view detailed information
-
-### Searching for Actors
-
-1. Navigate to the Actors page or use the search bar with "Actors Only" filter
-2. Search for actors by name or browse popular actors
-3. Click on any actor card to view their filmography
-4. Discover movies featuring your favorite actors
-
-### Rating Movies
-
-1. Go to a movie's detail page
-2. Click on the stars to rate the movie (1-5 stars)
-3. Your rating will be saved locally and persist across sessions
-
-### Dark Mode
-
-- Use the toggle button in the header to switch between light and dark modes
-- Your preference will be saved and applied on future visits
-
-## 🎯 Key Features Implemented
-
-### ✅ Required Features
-
-- [x] Movie search with OMDB API integration
-- [x] Actor search with comprehensive actor database
-- [x] Movie listing page (`/movies`)
-- [x] Movie details page (`/movies/:id`)
-- [x] Actor listing page (`/actors`)
-- [x] Actor details page (`/actors/:name`)
-- [x] Debounced search functionality
-- [x] Star rating system with local storage
-- [x] Dark mode toggle with persistence
-- [x] Responsive design
-- [x] TypeScript implementation
-- [x] Redux Toolkit for state management
-- [x] Framer Motion animations
-- [x] Advanced loading and error states
-- [x] Beautiful modern UI design
-- [x] Proper image handling with fallbacks
-- [x] SEO-friendly structure
-
-## 🔧 API Configuration
-
-The app uses the OMDB API with the provided API key
-
-## 📁 Project Structure
-
-```
-src/
-├── app/                    # Next.js app directory
-│   ├── movies/            # Movies pages
-│   │   ├── [id]/         # Dynamic movie detail pages
-│   │   └── page.tsx      # Movies listing page
-│   ├── globals.css       # Global styles
-│   ├── layout.tsx        # Root layout
-│   ├── page.tsx          # Home page (redirects to /movies)
-│   └── providers.tsx     # Redux and theme providers
-├── components/            # React components
-│   ├── ui/               # Reusable UI components
-│   ├── DarkModeToggle.tsx
-│   ├── Header.tsx
-│   ├── MovieCard.tsx
-│   ├── MovieGrid.tsx
-│   └── SearchBar.tsx
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility functions
-├── services/             # API services
-├── store/                # Redux store and slices
-└── types/                # TypeScript type definitions
-```
-
-## 🎨 Design Decisions
-
-### State Management
-
-- **Redux Toolkit** for global state management
-- Local storage for user preferences (ratings, dark mode)
-- Debounced search to optimize API calls
-
-### UI/UX
-
-- Clean, modern design with consistent spacing and typography
-- Card-based layout for movie listings
-- Smooth transitions and hover effects
-- Proper loading states and error handling
-- Accessible color contrasts in both light and dark modes
-
-### Performance
-
-- Image optimization with Next.js Image component
-- Debounced search to reduce API calls
-- Lazy loading and code splitting
-- Efficient re-renders with proper React patterns
-
-## 🧪 Available Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-```
-
-## 🔐 Environment Variables
-
-To enable the Gemini-powered multilingual chatbot, set the following environment variable in your environment (e.g., `.env.local`):
-
-```
-GOOGLE_API_KEY=your_google_generative_ai_key
-```
-
-You can obtain an API key by creating a project and enabling the Generative Language API in Google AI Studio.
-
-## 💬 Multilingual Chatbot
-
-- Appears site-wide as a floating button in the bottom-right corner
-- Supports auto language detection or manual selection
-- Helps with movie/actor search, recommendations, and app feature guidance
-- Backend route: `src/app/api/chat/route.ts` using `@google/generative-ai`
-
-## 🌟 Future Enhancements
-
-- Add user authentication
-- Implement watchlist functionality
-- Add movie recommendations
-- Include trailers and additional media
-- Add advanced filtering options
-- Implement movie comparison features
-- Expand actor database with more performers
-- Add actor awards and accolades information
-- Implement actor collaboration networks
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
+[![CI](https://github.com/prachiaggarwal609/cineverse/actions/workflows/ci.yml/badge.svg)](https://github.com/prachiaggarwal609/cineverse/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15.3-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://typescriptlang.org)
+[![Tests](https://img.shields.io/badge/tests-59%20passing-brightgreen)](#testing)
 
 ---
 
-Built with ❤️ using Next.js and the OMDB API
+## Features
+
+| Feature | Description |
+|---|---|
+| Movie Search | Debounced real-time search via OMDB API |
+| TV Shows | Browse and search TV series |
+| Actor Profiles | Explore filmographies of 26+ actors |
+| Movie Details | Full metadata: ratings, cast, plot, awards, box office |
+| Movie Comparison | Side-by-side compare tool for 2 movies |
+| Watchlist | Save movies to watch later (persisted in localStorage) |
+| Favorites | Mark and manage favorite films |
+| Watched History | Track movies you've already seen |
+| Star Ratings | Rate movies 1–5 stars |
+| AI Chatbot | Gemini-powered recommendation chatbot |
+| Trailer Player | Embedded YouTube official trailers |
+| PDF Export | Export movie details as PDF |
+| Dark Mode | Class-based theme with persistence |
+| Responsive Design | Optimized for mobile, tablet, and desktop |
+
+---
+
+## Screenshots
+
+> Deploy the app and capture screenshots for your README here.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 15.3 (App Router) |
+| Language | TypeScript 5.9 |
+| UI | React 19, TailwindCSS 3.4 |
+| Animations | Framer Motion |
+| State | Redux Toolkit + TanStack React Query v5 |
+| Charts | Recharts + Chart.js |
+| Icons | Lucide React |
+| AI | Google Gemini 2.0 Flash |
+| Movie Data | OMDB API |
+| Trailers | YouTube Data API v3 |
+| PDF | jsPDF + html2canvas |
+| Testing | Jest 30 + Testing Library |
+| CI/CD | GitHub Actions |
+| Container | Docker (Node 22 Alpine) |
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+ (22 recommended)
+- npm 9+
+- API keys for OMDB and Gemini AI
+
+### Installation
+
+```bash
+# Clone
+git clone https://github.com/prachiaggarwal609/cineverse.git
+cd cineverse
+
+# Install
+npm install
+
+# Configure environment
+cp .env.example .env.local
+# Edit .env.local and add your API keys
+
+# Start dev server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — you'll be redirected to `/movies`.
+
+---
+
+## Environment Variables
+
+| Variable | Required | Purpose |
+|---|---|---|
+| `NEXT_PUBLIC_OMDB_API_KEY` | Yes | Movie and TV show data |
+| `NEXT_PUBLIC_GEMINI_API_KEY` | Yes | AI chatbot responses |
+| `NEXT_PUBLIC_YOUTUBE_API_KEY` | No | Movie trailer search |
+
+Get your keys:
+- OMDB: [omdbapi.com/apikey.aspx](https://www.omdbapi.com/apikey.aspx)
+- Gemini: [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+- YouTube: [console.cloud.google.com](https://console.cloud.google.com) → YouTube Data API v3
+
+---
+
+## Available Scripts
+
+```bash
+npm run dev          # Development server (Turbopack)
+npm run build        # Production build
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm test             # Run all tests
+npm run test:watch   # Watch mode tests
+npm run test:coverage # Tests with coverage report
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/                # Next.js App Router pages
+│   ├── movies/         # Movie listing and detail pages
+│   ├── tv-shows/       # TV shows page
+│   ├── actors/         # Actor pages
+│   ├── genres/         # Genre browsing
+│   ├── watchlist/      # Watchlist page
+│   ├── profile/        # User profile
+│   ├── about/          # About page
+│   ├── login/          # Login UI
+│   └── signup/         # Signup UI
+├── components/         # Reusable React components
+│   ├── ui/             # Base UI primitives
+│   └── skeletons/      # Loading skeleton components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── providers/          # React context providers
+├── services/           # External API clients
+├── store/              # Redux Toolkit store & slices
+└── types/              # TypeScript type definitions
+```
+
+---
+
+## Testing
+
+```bash
+npm test
+```
+
+**59 tests across 4 suites — all passing:**
+
+| Suite | Tests | Coverage Area |
+|---|---|---|
+| `utils.test.ts` | 17 | Utility functions & search helpers |
+| `actorApi.test.ts` | 18 | Actor dataset & search logic |
+| `redux.test.ts` | 14 | Watchlist & favorites Redux slices |
+| `movieApi.test.ts` | 10 | OMDB API wrapper (mocked fetch) |
+
+---
+
+## API Documentation
+
+### Movie Search
+```
+GET https://www.omdbapi.com/?s={query}&apikey={key}
+```
+
+### Movie Details
+```
+GET https://www.omdbapi.com/?i={imdbID}&apikey={key}
+```
+
+### TV Show Search
+```
+GET https://www.omdbapi.com/?s={query}&type=series&apikey={key}
+```
+
+### Gemini AI Chatbot
+```
+POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+Headers: X-goog-api-key: {key}
+```
+
+### YouTube Trailers
+```
+GET https://www.googleapis.com/youtube/v3/search?q={title}+official+trailer&key={key}
+```
+
+---
+
+## Deployment
+
+**Vercel (Recommended):**
+1. Push to GitHub
+2. Import project at [vercel.com](https://vercel.com)
+3. Add environment variables in Vercel dashboard
+4. Deploy — done
+
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for full instructions including Netlify and Docker.
+
+---
+
+## Documentation Index
+
+| Document | Description |
+|---|---|
+| [PROJECT_ANALYSIS.md](PROJECT_ANALYSIS.md) | Full project architecture analysis |
+| [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md) | Step-by-step installation instructions |
+| [RUNNING_GUIDE.md](RUNNING_GUIDE.md) | How to run locally, in Docker, or for production |
+| [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) | Vercel, Netlify, and Docker deployment |
+| [TEST_REPORT.md](TEST_REPORT.md) | Complete test suite results |
+| [COLLEGE_SUBMISSION_REPORT.md](COLLEGE_SUBMISSION_REPORT.md) | Academic submission report |
+| [API_SETUP.md](API_SETUP.md) | API key setup instructions |
+| [contributing.md](contributing.md) | Contribution guidelines |
+
+---
+
+## CI/CD
+
+GitHub Actions workflow runs on every push and PR:
+
+1. **Lint** — ESLint code quality check
+2. **Type Check** — TypeScript strict compilation
+3. **Test** — Jest unit & integration tests with coverage
+4. **Build** — Next.js production bundle
+5. **Docker Build** — Verify Dockerfile on pushes to master
+
+Workflow file: [.github/workflows/ci.yml](.github/workflows/ci.yml)
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/your-feature`
+3. Follow the [contributing guidelines](contributing.md)
+4. Run tests: `npm test`
+5. Open a Pull Request
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE)
+
+---
+
+Built with love using Next.js and the OMDB API
